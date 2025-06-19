@@ -12,6 +12,10 @@ const HolidayList: React.FC = () => {
   //  Language toggle: "en" or "bn"
   const [language, setLanguage] = useState<"en" | "bn">("en");
 
+  //=========== show update modal ==================//
+  const[showModal, setShowModal] = useState(false);
+
+
   useEffect(() => {
     dispatch(fetchHolidays());
   }, [dispatch]);
@@ -45,7 +49,7 @@ const HolidayList: React.FC = () => {
           বাংলা
         </button>
       </div>
-      {/* ✅ Conditional Rendering Based on Language */}
+      {/*Conditional Rendering Based on Language */}
       {language === "en" ? (
         <>
           <p>Hotline No: {currentHoliday.hotlineNoEnglish}</p>
@@ -73,8 +77,11 @@ const HolidayList: React.FC = () => {
       )}
 
       <hr />
-      <button className="mt-2 mx-2 px-4  py-2 bg-green-500 text-white rounded-2xl">Holiday Setting</button>
+      <button  onClick={() => setShowModal(true)}
+      className="mt-2 mx-2 px-4  py-2 bg-green-500 text-white rounded-2xl">Holiday Setting</button>
+      
     </div>
+
   );
 };
 
