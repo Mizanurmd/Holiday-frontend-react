@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo, useState } from "react";
 import type { AppDispatch, RootState } from "../../features/store";
 import { fetchHolidays } from "../weeklyHolidaySlice/weeklyHolidaySlice";
+import HolidayUpdateForm from "./holidayUpdateForm";
 
 const HolidayList: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -11,10 +12,7 @@ const HolidayList: React.FC = () => {
 
   //  Language toggle: "en" or "bn"
   const [language, setLanguage] = useState<"en" | "bn">("en");
-
-  //=========== show update modal ==================//
-  const[showModal, setShowModal] = useState(false);
-
+      const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     dispatch(fetchHolidays());
@@ -67,7 +65,7 @@ const HolidayList: React.FC = () => {
           <p>হটলাইন নম্বর: {currentHoliday.hotlineNoBangla}</p>
           <p>মোবাইল নম্বর: {currentHoliday.phoneBangla}</p>
           <p>
-            কর্মদিবস: {currentHoliday.holidayBangla}({" "}
+            কর্মদিবস: {currentHoliday.hoidayBangla}({" "}
             {currentHoliday.timeBetweenBangla} )
           </p>
           <p className="text-amber-700">
@@ -79,7 +77,14 @@ const HolidayList: React.FC = () => {
       <hr />
       <button  onClick={() => setShowModal(true)}
       className="mt-2 mx-2 px-4  py-2 bg-green-500 text-white rounded-2xl">Holiday Setting</button>
-      
+
+      {showModal && (
+        <HolidayUpdateForm 
+        onClose ={()=>setShowModal(false)}
+        holiday={currentHoliday}
+        />
+
+      )}
     </div>
 
   );
