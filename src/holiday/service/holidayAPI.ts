@@ -22,7 +22,7 @@ const holidayAPI = {
     },
 
     update: async (id: number, weeklyHolidayData: WeeklyHolidaySetup): Promise<WeeklyHolidaySetup> => {
-        const res = await axios.put(`${BASE_URL}/${id}`, weeklyHolidayData);
+        const res = await axios.put(`${BASE_URL}/update/${id}`, weeklyHolidayData);
         return res.data.data;
     },
 

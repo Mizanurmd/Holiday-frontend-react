@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo, useState } from "react";
 import type { AppDispatch, RootState } from "../../features/store";
 import { fetchHolidays } from "../weeklyHolidaySlice/weeklyHolidaySlice";
+import HolidayUpdateFrom from "./HolidayUpdateFrom";
 
 const HolidayList: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -80,8 +81,16 @@ const HolidayList: React.FC = () => {
       <button  onClick={() => setShowModal(true)}
       className="mt-2 mx-2 px-4  py-2 bg-green-500 text-white rounded-2xl">Holiday Setting</button>
       
+{showModal && (
+  <HolidayUpdateFrom
+    onClose={() => setShowModal(false)}
+    holidayUpdate={currentHoliday}
+  />
+)}
+
     </div>
 
+    
   );
 };
 
