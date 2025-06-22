@@ -65,7 +65,7 @@ const HolidayList: React.FC = () => {
           <p>হটলাইন নম্বর: {currentHoliday.hotlineNoBangla}</p>
           <p>মোবাইল নম্বর: {currentHoliday.phoneBangla}</p>
           <p>
-            কর্মদিবস: {currentHoliday.hoidayBangla}({" "}
+            কর্মদিবস: {currentHoliday.holidayBangla}({" "}
             {currentHoliday.timeBetweenBangla} )
           </p>
           <p className="text-amber-700">

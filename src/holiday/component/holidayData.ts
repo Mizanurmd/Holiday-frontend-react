@@ -1,7 +1,7 @@
 export interface WeeklyHolidaySetup {
   id?: number;
   holidayEnglish: string;
-  hoidayBangla: string;
+  holidayBangla: string;
   hotlineNoEnglish: string;
   hotlineNoBangla: string;
   phoneEnglish: string;
