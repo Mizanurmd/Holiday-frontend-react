@@ -22,8 +22,8 @@ export const fetchHolidays = createAsyncThunk(
     async (_, thunkAPI) => {
         try {
             return await holidayAPI.getAll();
-        } catch (error: any) {
-            return thunkAPI.rejectWithValue(error.message);
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
         }
     }
 );
@@ -38,8 +38,8 @@ export const fetchHolidaySingleData = createAsyncThunk<
         try {
             const res = await holidayAPI.getSingleData(id);
             return res; // res is of type WeeklyHolidaySetup
-        } catch (error: any) {
-            return rejectWithValue(error.message);
+        } catch (error) {
+            return rejectWithValue(error);
         }
     }
 );
@@ -49,8 +49,8 @@ export const addHoliday = createAsyncThunk(
     async (data: WeeklyHolidaySetup, thunkAPI) => {
         try {
             return await holidayAPI.create(data);
-        } catch (error: any) {
-            return thunkAPI.rejectWithValue(error.message);
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
         }
     }
 );
@@ -60,8 +60,8 @@ export const updateHoliday = createAsyncThunk(
     async ({ id, data }: { id: number; data: WeeklyHolidaySetup }, thunkAPI) => {
         try {
             return await holidayAPI.update(id, data);
-        } catch (error: any) {
-            return thunkAPI.rejectWithValue(error.message);
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
         }
     }
 );
@@ -72,8 +72,8 @@ export const deleteHoliday = createAsyncThunk(
         try {
             await holidayAPI.remove(id);
             return id;
-        } catch (error: any) {
-            return thunkAPI.rejectWithValue(error.message);
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
         }
     }
 );

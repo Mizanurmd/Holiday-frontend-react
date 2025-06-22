@@ -2,6 +2,7 @@ export interface WeeklyHolidaySetup {
   id?: number;
   holidayEnglish: string;
   holidayBangla: string;
+  hoidayBangla: string;
   hotlineNoEnglish: string;
   hotlineNoBangla: string;
   phoneEnglish: string;
@@ -10,5 +11,5 @@ export interface WeeklyHolidaySetup {
   timeBetweenBangla: string;
   specialNoteEnglish: string;
   specialNoteBangla: string;
-  currentYN?: boolean;
+  currentYN??: boolean;
 }

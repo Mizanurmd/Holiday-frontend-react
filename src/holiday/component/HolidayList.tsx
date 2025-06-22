@@ -12,10 +12,7 @@ const HolidayList: React.FC = () => {
 
   //  Language toggle: "en" or "bn"
   const [language, setLanguage] = useState<"en" | "bn">("en");
-
-  //=========== show update modal ==================//
-  const[showModal, setShowModal] = useState(false);
-
+      const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     dispatch(fetchHolidays());
@@ -68,7 +65,7 @@ const HolidayList: React.FC = () => {
           <p>হটলাইন নম্বর: {currentHoliday.hotlineNoBangla}</p>
           <p>মোবাইল নম্বর: {currentHoliday.phoneBangla}</p>
           <p>
-            কর্মদিবস: {currentHoliday.holidayBangla}({" "}
+            কর্মদিবস: {currentHoliday.hoidayBangla}({" "}
             {currentHoliday.timeBetweenBangla} )
           </p>
           <p className="text-amber-700">
