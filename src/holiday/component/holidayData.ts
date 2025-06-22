@@ -10,5 +10,5 @@ export interface WeeklyHolidaySetup {
   phoneBangla: string;
   specialNoteEnglish: string;
   specialNoteBangla: string;
-  currentYN: boolean;
+  currentYN?: boolean;
 }
