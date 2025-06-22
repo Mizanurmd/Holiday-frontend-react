@@ -38,7 +38,7 @@ export const fetchHolidaySingleData = createAsyncThunk<
         try {
             const res = await holidayAPI.getSingleData(id);
             return res; // res is of type WeeklyHolidaySetup
-        } catch (error) {
+        } catch (error:any) {
             return rejectWithValue(error);
         }
     }

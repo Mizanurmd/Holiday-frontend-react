@@ -13,7 +13,7 @@ const HolidayUpdateFrom: React.FC<Props> = ({ holidayUpdate, onClose }) => {
 
   const [formData, setFormData] = useState({
     holidayEnglish: holidayUpdate.holidayEnglish,
-    holidayBangla: holidayUpdate.holidayBangla,
+    hoidayBangla: holidayUpdate.hoidayBangla,
     hotlineNoEnglish: holidayUpdate.hotlineNoEnglish,
     hotlineNoBangla: holidayUpdate.hotlineNoBangla,
     phoneEnglish: holidayUpdate.phoneEnglish,
@@ -75,9 +75,9 @@ if (!holidayUpdate.id || typeof holidayUpdate.id !== "number") {
               <label className="w-1/2 font-semibold">Holiday (Bangla):</label>
               <input
                 type="text"
-                value={formData.holidayBangla}
+                value={formData.hoidayBangla}
                 onChange={(e) =>
-                  setFormData({ ...formData, holidayBangla: e.target.value })
+                  setFormData({ ...formData, hoidayBangla: e.target.value })
                 }
                 className="w-2/3 border px-3 py-2 rounded"
               />
