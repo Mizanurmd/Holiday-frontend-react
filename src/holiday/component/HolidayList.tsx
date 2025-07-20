@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo, useState } from "react";
 import type { AppDispatch, RootState } from "../../features/store";
 import { fetchHolidays } from "../weeklyHolidaySlice/weeklyHolidaySlice";
-import HolidayUpdateForm from "./holidayUpdateForm";
+import HolidayUpdateForm from "./HolidayUpdateForm";
+
 
 const HolidayList: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
